@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<style>
+		.login
+		{
+			width: 88%;
+			height: 84px;
+			background-color:#3b5998;
+			padding-left: 160px;
+		}
+		#f1
+		{
+			margin-top: -70px;
+			margin-bottom: 50px;
+			margin-left: 740px;
+			color: white;
+		}
+		#id_bt_login
+		{
+			background-color: #3b5998;
+			color: white;
+		}
+		.leftdiv
+		{
+			background-color:#edf0f5;
+	 		height:520px;
+	 		text-align: left;
+	 		padding-top: 20px;
+		}
+		#subid
+		{
+
+		}
+		.p1
+		{
+			margin-top: -20px;
+		}
+		.p2
+		{
+			margin-top: 3px;
+		}
+		.image
+		{
+			margin-top: 20px;
+			margin-left: 200px;
+		}
+		.rightdiv
+		{
+			margin-top: -100px;
+			margin-left: 890px;
+		}
+		.p3
+		{
+			margin-top: -110px;
+			margin-left: -100px;
+			border: 1px solid blue;
+		}
+		#text
+		{
+
+			border-radius: 5px;
+			border-color: lightblue;
+			height: 25px;
+		}
+		.p4
+		{
+			margin-top: -10px;
+			margin-left: -1px;
+
+		}
+		.dob
+		{
+			margin-top: -20px;
+			background-color: lightgray;
+
+		}
+		#rightbox
+		{
+			margin-right: 400px;
+			margin-top: -40px;
+			margin-left: 170px;
+			color: blue;
+			font-size: 12px;
+		}	
+	</style>
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+          $(document).ready(function()
+{
+$('#id_bt_login').click(function()
+{ 
+   username=$("#txt_username").val();
+   password=$("#txt_password").val();
+  $.ajax(
+  {
+    'url':'http://services.trainees.baabtra.com/LoginService/login.php',
+    'DataType':'jsonp',
+    'data':{email:username,password:password},
+    success:function(data)
+    {
+      
+      var json = $.parseJSON(data);
+      console.log(json[0].Msg);
+      if(json[0].ResponseCode=="200")
+      {
+      //  window.location.href="facebook2.html?email="+json[0].vchr_first_name+"&&name="+json[0].vchr_first_name;
+        window.location.href="homepage.html";
+
+      }
+      else if(json[0].ResponseCode=="500")
+      {
+        // window.location.href="fberror?email="+json[0].vchr_user_name+"&&name="+json[0].vchr_first_name;
+        window.location.href="check_password.html";
+      }
+      else
+      {
+        window.location.href="username.html";
+      }
+      console.log(json[0].ResponseCode)
+     // $("#contact").html(data);
+    },
+    error:function(error)
+    {
+      console.log(error);
+      alert(error);
+    }
+  });
+  });
+});
+       
+     
+
+
+     </script>
+</head>
+
+<body>
+
+	<div id="maindiv">
+		
+		<div class="login">
+            <img src="images\fb.jpg" width="240">
+            <form id="f1"><font face="verdana" size="-2px;">
+                Email or Phone &emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp; Password<br>
+                <input type="text" placeholder="username" name="usrname" id="txt_username" style="width: 140px;">&emsp;
+                <input type="text" placeholder ="password" name="pwd" id="txt_password" style="width: 140px;">&emsp;
+                <input type="button"  value="Log In" onClick="return validate_form()" id="id_bt_login"></font><br>
+                <input type="checkbox"><font face="verdana" size="-2px;" color="gray">Keep me logged in &emsp;&emsp;&emsp;&nbsp; Forgotten your password?</font>
+            </form>
+        </div>
+
+    	<div class="leftdiv">
+	    	<b><p class="p1">
+	    	<font face="arial" size="4px" color="#3b5998" style="margin-top: -10px; margin-left: 197px;"></p>Facebook helps you connect and share with the 
+	    	<p class="p2" style="margin-left: 197px;">people in your life</p></b>
+	        </font>
+	        <img class="image" src="images\fb.png" height="200px" align="left">
+    	
+                                    
+	 	<div class="rightdiv">
+	 	<form id="f2">
+	        <font face="arial" size="6"><b>Create an account</b></font>
+	        <p id="p3">
+	        <font face="arial"><b>It's free and always will be.</b></font></p>
+	        <input type="text" id="text" placeholder="First name">&nbsp;
+	        <input type="text" id="text" placeholder ="Surname"><br><br>
+	        <input type="text" id="text" placeholder ="Email or mobile number" style="width: 350px;"><br><br>
+			<input type="text" id="text" placeholder ="Re-enter email or mobile number" style="width: 350px;"><br><br>
+	        <input type="text" id="text" placeholder ="New password" style="width: 350px;"><br><br>
+
+	        <p class="p4"><font face="arial">Birthday</font><p>
+	        <select name="dob" class="dob">
+	<option value="d">Day
+	
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+</select>
+  
+	<select name="dob" class="dob">
+		<option value="d">Month
+		<option value="January">January</option>
+		<option value="Febuary">Febuary</option>
+		<option value="March">March</option>
+		<option value="April">April</option>
+		<option value="May">May</option>
+		<option value="June">June</option>
+		<option value="July">July</option>
+		<option value="August">August</option>
+		<option value="September">September</option>
+		<option value="October">October</option>
+		<option value="November">November</option>
+		<option value="December">December</option>
+	</select>
+
+	
+ <select name="dob" class="dob">
+	        		<option value="d">Year
+	
+	<option value="1993">1993</option>
+	<option value="1992">1992</option>
+	<option value="1991">1991</option>
+	<option value="1990">1990</option>
+	<option value="1989">1989</option>
+	<option value="1988">1988</option>
+	<option value="1987">1987</option>
+	<option value="1986">1986</option>
+	<option value="1985">1985</option>
+	<option value="1984">1984</option>
+	<option value="1983">1983</option>
+	<option value="1982">1982</option>
+	<option value="1981">1981</option>
+	<option value="1980">1980</option>
+	<option value="1979">1979</option>
+	<option value="1978">1978</option>
+	<option value="1977">1977</option>
+	<option value="1976">1976</option>
+	<option value="1975">1975</option>
+	<option value="1974">1974</option>
+	<option value="1973">1973</option>
+	<option value="1972">1972</option>
+	<option value="1971">1971</option>
+	<option value="1970">1970</option>
+	<option value="1969">1969</option>
+	<option value="1968">1968</option>
+	<option value="1967">1967</option>
+	<option value="1966">1966</option>
+	<option value="1965">1965</option>
+	<option value="1964">1964</option>
+	<option value="1963">1963</option>
+	<option value="1962">1962</option>
+	<option value="1961">1961</option>
+	<option value="1960">1960</option>
+	<option value="1959">1959</option>
+	<option value="1958">1958</option>
+	<option value="1957">1957</option>
+	<option value="1956">1956</option>
+	<option value="1955">1955</option>
+	<option value="1954">1954</option>
+	<option value="1953">1953</option>
+	<option value="1952">1952</option>
+	<option value="1951">1951</option>
+	<option value="1950">1950</option>
+	<option value="1949">1949</option>
+	<option value="1948">1948</option>
+	<option value="1947">1947</option>
+	
+</select>
+
+	      
+
+	    <div id="rightbox" style="border: 1px solid blue; height: 28px; width: 150px;">
+	        	Why do i need to provide my date of birth?
+	    </div>
+
+	        <input type="radio" name="gender" id="rb_female" value="female" > Female 
+	       	<input type="radio" name="gender" value="male" id="rb_male"> Male
+					<br><br>
+			<font face="arial" size="1.2px">By clicking Create an account, you agree to our <font color="blue">Terms</font> and that <br>you have read our<font color="blue"> Data Policy</font>, including our<font color="blue"> Cookie Use.</font></font><br>
+			<input type="submit" value="Create an account" id="subid" style="margin-left: -4px;background-color: green;border-radius:7px;">
+			</form>
+			<hr>
+			<span style="color: blue">Create a Page</span> for a celebrity, band or business.
+			
+		</div>
+	</div>
+</body>
+</html>

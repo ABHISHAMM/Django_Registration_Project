@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>username</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+	#maindiv
+	{
+		border-left: 3px;
+	}
+		.login
+		{
+			width: 78.5%;
+			height: 78px;
+			background-color:#3b5998;
+			padding-left: 200px;
+			padding-right: 90px;
+		}
+		.signup
+		{
+			margin-top: -40px;
+			margin-left: 230px;
+		}
+		.leftdiv
+		{
+			background-color:#edf0f5;
+	 		height:720px;
+	 		text-align: left;
+	 		padding-top: 20px;
+		}
+		.leftsubdiv
+		{
+			background-color: white;
+			width: 500px;
+			height: 240px;
+			margin-top: 60px;
+			margin-left: 400px;
+		}
+		#p1
+		{
+			color:#3b5998;
+			padding-top: 15px;
+			padding-left: 10px;
+		}
+		.img
+		{
+			margin-top: -35px;
+		}
+		.btn1
+		{
+			background-color: #3b5998;
+			color: white;
+			margin-left: 170px;
+		}
+		#warning_icon
+		{
+			margin-top: -19px;
+			margin-left: 270px;
+		}
+		.tooltip 
+		{
+		    position: relative;
+		    display: inline-block;
+		}
+
+		.tooltip .tooltiptext 
+		{
+		    visibility: hidden;
+		    width: 230px;
+		    margin-left: 157px;
+		    margin-top: -40px;
+		    background-color: white;
+		    color: red;
+		    border: 1px solid red;
+		    border-radius : 4px;
+		    padding: 5px;
+		    text-align: left;
+		    font-size: 14px;
+		    position: absolute;
+		    z-index: 1;
+		    top: -5px;
+		    left: 110%;
+		}
+
+		.tooltip .tooltiptext::after 
+		{
+			    content: "";
+			    position: absolute;
+			    top: 50%;
+			    right: 100%;
+			    margin-top: -5px;
+			    border-width: 5px;
+			    border-style: solid;
+			    border-color: transparent red transparent transparent;
+		}
+		.tooltip .tooltiptext {
+			    visibility: visible;
+		}
+
+		
+
+		</style>
+</head>
+<body>
+	<div id="maindiv">
+		
+		<div class="login">
+            <img src="images\fb.jpg" width="240">
+            <div class="signup">
+            	<img src="images\sign.png">
+           	</div>
+
+        </div>
+
+        <div class="leftdiv">
+        	<div class="leftsubdiv" align="center">
+        		<p id="p1" align="left"><b>Facebook Login<b></p>
+        		<hr style="margin-top: -10px; width: 475px;"><br>
+        		Email or Phone :&nbsp;&nbsp;<input type="text" name="text" style="margin-top:-10px;margin-bottom: -30px;">
+
+        		
+
+        		<div id="warning_icon"><i class="material-icons" style="font-size: 20px;color: red;">warning</i></div>
+
+        		<div class="tooltip"><br>
+        		<span class="tooltiptext">The email address that you have entered is doesnt match any account.
+        		<font size="4px">Sign up for Facebook</font></span>
+				</div>
+        		<br>
+      
+        		 Password :&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="text" style="margin-top:-10px;margin-bottom: -30px;"><br>
+
+        		&emsp;&emsp;&emsp;&nbsp;<input type="checkbox"><font face="arial" size="-2px;">Keep me logged in<br><br>
+        		<input type="button" class="btn1" value="Log In" onClick="return validate_form()"></font>
+        		or <font color="blue">Sign up for Facebook
+        		<p style="margin-left: 90px;">Forgotten password?</p></font>
+        </div>
+    </div>
+</body>
+</html>
